@@ -1,0 +1,9 @@
+[general]
+name=quadrat-coverage
+description=Quadrat coverage
+about=Calculate coverage of quadrats above a threshold
+version=0.1
+qgisMinimumVersion=3.0
+author=Dan Howe
+email=d.howe@wrl.unsw.edu.au
+repository=
