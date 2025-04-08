@@ -15,14 +15,15 @@ The workflow for calculating percent coverage is as follows:
 3. Calculate the percent of vegetation coverage for a grid of quadrats.
 
 The following images illustrate the workflow.
-| Description                                                            | Image                                            |
-| ---------------------------------------------------------------------- | ------------------------------------------------ |
-| RGB image                                                              | <img height=150px src=docs/rgb.jpg>              |
-| NDVI image (greyscale)                                                 | <img height=150px src=docs/ndvi-grey.jpg>        |
-| NDVI image (pseduocolour) with clipping mask                           | <img height=150px src=docs/ndvi-pseudo-grey.jpg> |
-| Classified/binary image after clipping (yellow pixels show vegetation) | <img height=150px src=docs/nvdvi-pseudo-bw.jpg>  |
-| Quadrats with percent vegetation coverage                              | <img height=150px src=docs/exactextract.jpg>     |
+| Image                                            | Description                                                            |
+| ------------------------------------------------ | ---------------------------------------------------------------------- |
+| <img height=150px src=docs/rgb.jpg>              | RGB image                                                              |
+| <img height=150px src=docs/ndvi-grey.jpg>        | NDVI image (greyscale)                                                 |
+| <img height=150px src=docs/ndvi-pseudo-grey.jpg> | NDVI image (pseduocolour) with clipping mask                           |
+| <img height=150px src=docs/nvdvi-pseudo-bw.jpg>  | Classified/binary image after clipping (yellow pixels show vegetation) |
+| <img height=150px src=docs/exactextract.jpg>     | Quadrats with percent vegetation coverage                              |
 
+## Inputs
 
 There are four inputs required for the calculation:
 
@@ -31,21 +32,14 @@ There are four inputs required for the calculation:
 | NDVI image    | raster (e.g. tif)                | Single band input image of vegetated area     |
 | Clipping mask | vector (e.g. shapefile, geojson) | Clipping polygon(s)                           |
 | Quadrat grid  | vector (e.g. shapefile, geojson) | Quadrat polygons                              |
-| Threshold     | Float                            | Threshold value for vegetation classification |
+| Threshold     | Decimal value between -1 and +1   | Threshold value for vegetation classification |
 
 
 ## Threshold value
 
 An appropriate vegetation threshold value can be determined by changing the symbology settings in QGIS.
 
-<!-- ![](docs/interactive-thresholding.gif) -->
-
-
-|                |                             |                             |                             |
-| -------------- | --------------------------: | --------------------------: | --------------------------: |
-|                | ![](docs/threshold-0.1.jpg) | ![](docs/threshold-0.3.jpg) | ![](docs/threshold-0.5.jpg) |
-| NDVI threshold |                         0.1 |                         0.3 |                         0.5 |
-
+![](docs/interactive-thresholding.gif)
 
 
 ## Installation
@@ -59,7 +53,11 @@ This package requires the `exactextract` library, which can be installed using `
 
 ## QGIS plugin
 
+The QGIS plugin can be installed by selecting 'Plugins' -> 'Manage and Install Plugins...' -> 'Install from ZIP'.
 
+![](docs/install-plugin-from-zip.png)
+
+The zip file can be downloaded from [https://github.com/onewhaleid/quadrat-coverage](https://github.com/onewhaleid/quadrat-coverage/archive/refs/heads/main.zip)
 
 ## Command line tool
 
