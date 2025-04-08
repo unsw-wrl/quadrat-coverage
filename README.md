@@ -115,8 +115,8 @@ QGIS already has a tool for calculating zonal statistics. Why is the `exactextra
 In the example below, the QGIS zonal statistics tool reports 64% vegetation coverage in the lower left cell, because it is omitting the empty pixels outside the red clipping boundary. This value is clearly incorrect, because the majority of the cell is empty. In contrast, the `exactextract` package allows empty pixels to have a zero value (i.e. 'not vegetation') using the when calculating the percent coverage for the total cell area.
 
 
-| Result                         | Source              | Comment                                               |
-| ------------------------------ | ------------------- | ----------------------------------------------------- |
-| ![](docs/zonal-statistics.jpg) | `zonalstatisticsfb` | Empty pixels are excluded (percent cover is overestimated). |
-| ![](docs/exactextract.jpg)     | `exactextract`      | Empty pixels are considered 'not vegetation'. Percent cover is calculated correctly.         |
+| Result                         | Source              | Comment                                                                              |
+| ------------------------------ | ------------------- | ------------------------------------------------------------------------------------ |
+| ![](docs/zonal-statistics.jpg) | `zonalstatisticsfb` | Empty pixels are excluded (percent cover is overestimated).                          |
+| ![](docs/exactextract.jpg)     | `exactextract`      | Empty pixels are considered 'not vegetation'. Percent cover is calculated correctly. |
 
