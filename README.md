@@ -14,12 +14,13 @@ The workflow for calculating percent coverage is as follows:
 2. Classify the image into vegetation/non vegetation using a threshold.
 3. Calculate the percent of vegetation coverage for a grid of quadrats.
 
-|                                                                 |                                |
-| --------------------------------------------------------------- | ------------------------------ |
-| RGB image                                                       | ![](docs/rgb.jpg)              |
-| NDVI image (greyscale)                                          | ![](docs/ndvi-grey.jpg)        |
-| NDVI image (pseduocolour) with clipping mask                    | ![](docs/ndvi-pseudo-grey.jpg) |
-| Classified/binary image after clipping (yellow pixels show vegetation) | ![](docs/nvdvi-pseudo-bw.jpg)  |
+|                                                                        |                                                  |
+| ---------------------------------------------------------------------- | ------------------------------------------------ |
+| RGB image                                                              | <img height=150px src=docs/rgb.jpg>              |
+| NDVI image (greyscale)                                                 | <img height=150px src=docs/ndvi-grey.jpg>        |
+| NDVI image (pseduocolour) with clipping mask                           | <img height=150px src=docs/ndvi-pseudo-grey.jpg> |
+| Classified/binary image after clipping (yellow pixels show vegetation) | <img height=150px src=docs/nvdvi-pseudo-bw.jpg>  |
+| Quadrats with percent vegetation coverage                              | <img height=150px src=docs/exactextract.jpg>     |
 
 
 There are four inputs required for the calculation:
