@@ -11,10 +11,11 @@ index (NDVI).
 The workflow for calculating percent coverage is as follows:
 
 1. Clip the input raster to remove unwanted regions, such as trees and ocean.
-2. Classify the image into vegetation/non vegetation using a threshold.
+2. Classify the image into 'vegetation'/'non vegetation' using a threshold.
 3. Calculate the percent of vegetation coverage for a grid of quadrats.
 
-|                                                                        |                                                  |
+The following images illustrate the workflow.
+| Description                                                            | Image                                            |
 | ---------------------------------------------------------------------- | ------------------------------------------------ |
 | RGB image                                                              | <img height=150px src=docs/rgb.jpg>              |
 | NDVI image (greyscale)                                                 | <img height=150px src=docs/ndvi-grey.jpg>        |
