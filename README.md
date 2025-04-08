@@ -32,17 +32,12 @@ There are four inputs required for the calculation:
 | NDVI image    | raster (e.g. tif)                | Single band input image of vegetated area     |
 | Clipping mask | vector (e.g. shapefile, geojson) | Clipping polygon(s)                           |
 | Quadrat grid  | vector (e.g. shapefile, geojson) | Quadrat polygons                              |
-| Threshold     | Decimal value between -1 and +1   | Threshold value for vegetation classification |
-
-
-## Threshold value
-
-An appropriate vegetation threshold value can be determined by changing the symbology settings in QGIS.
-
-![](docs/interactive-thresholding.gif)
+| Threshold     | Decimal value between -1 and +1  | Threshold value for vegetation classification |
 
 
 ## Installation
+
+### exactextract
 
 This package requires the `exactextract` library, which can be installed using `pip`.
 
@@ -51,15 +46,66 @@ This package requires the `exactextract` library, which can be installed using `
 
 ![](docs/osgeo4w-shell.png)
 
-## QGIS plugin
+### QGIS plugin
 
-The QGIS plugin can be installed by selecting 'Plugins' -> 'Manage and Install Plugins...' -> 'Install from ZIP'.
+Download the zip file from [https://github.com/onewhaleid/quadrat-coverage](https://github.com/onewhaleid/quadrat-coverage/archive/refs/heads/main.zip)
+
+In QGIS, select 'Plugins' -> 'Manage and Install Plugins...' -> 'Install from ZIP'.
 
 ![](docs/install-plugin-from-zip.png)
 
-The zip file can be downloaded from [https://github.com/onewhaleid/quadrat-coverage](https://github.com/onewhaleid/quadrat-coverage/archive/refs/heads/main.zip)
+Then select 'Installed', and make sure the 'quadrat-coverage' plugin is ticked.
 
-## Command line tool
+![](docs/plugins-installed.png)
+
+
+## Usage
+
+### Graphical user interface
+
+The plugin can be opened from the toolbar icon:
+
+![](docs/plugin-button.png)
+
+After selecting the inputs, a new vector results layer is added to the map:
+
+![](docs/qgis-plugin.gif)
+
+
+### Command line tool
+
+A command line tool is also available, which allows batch processing of multiple sites.
+
+1. Open the `OSGeo4W Shell`.
+2. Type the command: `python quadrat_coverage.py inputs.ini`
+
+Where `inputs.ini` is a file containing the input parameters for each site.
+
+```ini
+[site-1]
+threshold = 0.3                                               # ndvi threshold
+raster_ndvi = C:\swc\quadrat-coverage\data\demo_ndvi.tif      # input image
+vector_grid = C:\swc\quadrat-coverage\data\demo_grid.geojson  # quadrat polygons
+vector_clip = C:\swc\quadrat-coverage\data\demo_clip.geojson  # clipping mask
+vector_output = C:\swc\quadrat-coverage\output.geojson        # output file
+
+[site-2]
+threshold = 
+raster_ndvi = 
+vector_grid = 
+vector_clip = 
+vector_output = 
+
+[site-3]
+...
+```
+
+## Threshold value
+
+An appropriate vegetation threshold value can be determined by iteratively changing the symbology settings of the NDVI layer in QGIS, with the RGB layer underneath.
+
+![](docs/interactive-thresholding.gif)
+
 
 ## Motivation
 
@@ -68,9 +114,8 @@ QGIS already has a tool for calculating zonal statistics. Why is the `exactextra
 In the example below, the QGIS zonal statistics tool reports 64% vegetation coverage in the lower left cell, because it is omitting the empty pixels outside the red clipping boundary. This value is clearly incorrect, because the majority of the cell is empty. In contrast, the `exactextract` package allows empty pixels to have a zero value (i.e. 'not vegetation') using the when calculating the percent coverage for the total cell area.
 
 
-|                                                       |                                               |
-| ----------------------------------------------------- | --------------------------------------------- |
-| Source: QGIS `zonalstatisticsfb`                      | Source: `exactextract`                        |
-| ![](docs/zonal-statistics.jpg)                        | ![](docs/exactextract.jpg)                    |
-| Empty pixels are excluded (% cover is overestimated). | Empty pixels are considered 'not vegetation'. |
+| Result                         | Source              | Comment                                               |
+| ------------------------------ | ------------------- | ----------------------------------------------------- |
+| ![](docs/zonal-statistics.jpg) | `zonalstatisticsfb` | Empty pixels are excluded (percent cover is overestimated). |
+| ![](docs/exactextract.jpg)     | `exactextract`      | Empty pixels are considered 'not vegetation'. Percent cover is calculated correctly.         |
 
