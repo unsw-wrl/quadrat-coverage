@@ -1,4 +1,4 @@
-"""quadrat_coverage.py
+r"""quadrat_coverage.py
 
 Calculate percent coverage of quadrats based on a binary raster.
 
