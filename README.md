@@ -48,7 +48,7 @@ This package requires the `exactextract` library, which can be installed using `
 
 ### QGIS plugin
 
-Download the zip file from [https://github.com/onewhaleid/quadrat-coverage](https://github.com/onewhaleid/quadrat-coverage/archive/refs/heads/main.zip)
+Download the zip file from [https://github.com/unsw-wrl/quadrat-coverage](https://github.com/unsw-wrl/quadrat-coverage/archive/refs/heads/main.zip)
 
 In QGIS, select 'Plugins' -> 'Manage and Install Plugins...' -> 'Install from ZIP'.
 
