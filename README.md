@@ -110,7 +110,7 @@ An appropriate vegetation threshold value can be determined by iteratively chang
 
 ## Motivation
 
-QGIS already has a tool for calculating zonal statistics. Why is the `exactextract` package needed? QGIS's built in zonal statistics tool `zonalstatisticsfb` does not handle edge cases correctly, where the quadrat polygons include regions beyond the raster extent. 
+QGIS already has a tool for calculating zonal statistics. Why is the `exactextract` package needed? QGIS's built in zonal statistics tool `zonalstatisticsfb` does not handle some edge cases correctly, for example where the quadrat polygons include regions beyond the raster extent. 
 
 In the example below, the QGIS zonal statistics tool reports 64% vegetation coverage in the lower left cell, because it is omitting the empty pixels outside the red clipping boundary. This value is clearly incorrect, because the majority of the cell is empty. In contrast, the `exactextract` package allows empty pixels to have a zero value (i.e. 'not vegetation') using the when calculating the percent coverage for the total cell area.
 
