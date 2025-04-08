@@ -41,7 +41,7 @@ There are four inputs required for the calculation:
 
 This package requires the `exactextract` library, which can be installed using `pip`.
 
-1. Open the `OSGeo4W Shell`.
+1. Open the `OSGeo4W Shell`
 2. Type the command: `pip install exactextract`
 
 ![](docs/osgeo4w-shell.png)
@@ -77,7 +77,7 @@ After selecting the inputs, a new vector results layer is added to the map:
 A command line tool is also available, which allows batch processing of multiple sites.
 
 1. Open the `OSGeo4W Shell`
-2. Navigate to correct directory `cd \path\to\quadrat-coverage`
+2. Navigate to correct directory, e.g.: `cd \path\to\quadrat-coverage`
 3. Type the command: `python quadrat_coverage.py inputs.ini`
 
 Where `inputs.ini` is a file containing the input parameters for each site.
