@@ -85,11 +85,11 @@ Where `inputs.ini` is a file containing the input parameters for each site.
 
 ```ini
 [site-1]
-threshold = 0.3                                               # ndvi threshold
-raster_ndvi = C:\swc\quadrat-coverage\data\demo_ndvi.tif      # input image
-vector_grid = C:\swc\quadrat-coverage\data\demo_grid.geojson  # quadrat polygons
-vector_clip = C:\swc\quadrat-coverage\data\demo_clip.geojson  # clipping mask
-vector_output = C:\swc\quadrat-coverage\output.geojson        # output file
+threshold = 0.3                                               
+raster_ndvi = C:\swc\quadrat-coverage\data\demo_ndvi.tif      
+vector_grid = C:\swc\quadrat-coverage\data\demo_grid.geojson  
+vector_clip = C:\swc\quadrat-coverage\data\demo_clip.geojson  
+vector_output = C:\swc\quadrat-coverage\output.geojson        
 
 [site-2]
 threshold = 
