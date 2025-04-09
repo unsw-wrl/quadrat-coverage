@@ -43,6 +43,7 @@ This package requires the `exactextract` library, which can be installed using `
 
 1. Open the `OSGeo4W Shell`
 2. Type the command: `pip install exactextract`
+3. Close and re-open QGIS before installing plugin
 
 ![](docs/osgeo4w-shell.png)
 
