@@ -2,7 +2,7 @@
 
 This package is designed to calculate the percent coverage of vegetation within
 certain areas (quadrats). The vegetation information is taken from a single-band
-raster image where the pixel values represent the non-dimensional vegetation
+raster image where the pixel values represent the normalised difference vegetation
 index (NDVI).
 
 
