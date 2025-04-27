@@ -41,11 +41,10 @@ There are four inputs required for the calculation:
 
 This package requires the `exactextract` library, which can be installed using `pip`.
 
-1. Open the `OSGeo4W Shell`
-2. Type the command: `pip install exactextract`
-3. Close and re-open QGIS before installing plugin
+1. Open the QGIS Python console
+2. Type the command: `!pip install exactextract`
 
-![](docs/osgeo4w-shell.png)
+![](docs/qgis-python-console.png)
 
 ### QGIS plugin
 
